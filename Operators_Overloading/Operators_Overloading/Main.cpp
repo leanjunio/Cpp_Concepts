@@ -29,6 +29,16 @@ struct Vector2
 	{
 		return Multiply(other);
 	}
+
+	bool operator==(const Vector2& other) const
+	{
+		return x == other.x && y == other.y;
+	}
+
+	bool operator!=(const Vector2& other) const
+	{
+		return !(*this == other);
+	}
 };
 
 std::ostream& operator<<(std::ostream& stream, const Vector2& other)
@@ -36,6 +46,7 @@ std::ostream& operator<<(std::ostream& stream, const Vector2& other)
 	stream << other.x << ", " << other.y;
 	return stream;
 }
+
 
 int main()
 {
@@ -45,6 +56,12 @@ int main()
 
 	Vector2 result1 = position.Add(speed.Multiply(powerup));
 	Vector2 result2 = position + speed * powerup;
+
+	if (result1 == result2)
+		std::cout << "They are equal" << std::endl;
+
+	if (result1 != result2)
+		std::cout << "They are NOT equal" << std::endl;
 
 	std::cout << result2 << std::endl;
 
