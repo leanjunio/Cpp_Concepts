@@ -61,7 +61,7 @@ int main()
 		std::cout << "They are equal" << std::endl;
 
 	if (result1 != result2)
-		std::cout << "They are NOT equal" << std::endl;
+		std::cout << "They are equal" << std::endl;
 
 	std::cout << result2 << std::endl;
 
