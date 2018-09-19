@@ -42,6 +42,7 @@ public:
 	Team(const Team& team)
 		// Copy constructor for copying teams
 	{
+		std::cout << "Copied Team from : " << &team << " to " << this << std::endl;
 		*this = team;
 	}
 	Team& operator=(const Team& other)
@@ -71,12 +72,15 @@ int main()
 	{
 		Player lean("Lean");
 		Player joe("Joe");
+		Player john("John");
 
 		Team hawks("Hawks");
 
 		// Fill hawks with players
 		hawks.addPlayer(lean);
 		hawks.addPlayer(joe);
+		hawks.addPlayer(john);
+
 		hawks.displayPlayers();
 
 		Team lakers = hawks;
